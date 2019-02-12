@@ -1,0 +1,19 @@
+.carousel-list {    
+    list-style: none;
+    align-items: center;
+}
+ 
+.item {
+    display: block;
+    margin-right: 25px;
+    float: left;
+    color: #74924C
+}
+ 
+.item img {
+    max-width: 400px;
+}
+
+OwlCarousel.navText {
+    size: 5pix
+}
