@@ -1,11 +1,12 @@
 import React from 'react';
+import './User.css';
 
 export class User extends React.Component {
-    retnder(){
+    render() {
         return(
             <div className='login'>
                 <div>
-                    Login: 
+                    Login:
                 </div>
                 <div>
                     Password:
