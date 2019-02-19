@@ -14,7 +14,6 @@ export class Carousel extends React.Component {
               loop
               margin={5}
               autoplay={'Autoplay'}
-              dotsSpeed={'15'}
               nav = {false}
               navText ={"<>"} 
               >
