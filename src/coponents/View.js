@@ -17,11 +17,11 @@ export class View extends React.Component{
                         <div>{this.props.item.engineVolume}</div>
                         <div><FormatItem value={this.props.item.price}  /> {this.props.item.money} </div>
                         <div>{this.props.item.status}</div>
-                        <div>
-                            <div><button onClick={this.props.onView}>Посмотреть</button></div>
-                            <div><button onClick={this.props.onChange}>Изменить</button></div>
-                            <div><button onClick={this.props.onRemove}>Удалить</button></div>
-                        </div>
+                        {/*<div>*/}
+                            {/*<div><button onClick={this.props.onView}>Посмотреть</button></div>*/}
+                            {/*<div><button onClick={this.props.onChange}>Изменить</button></div>*/}
+                            {/*<div><button onClick={this.props.onRemove}>Удалить</button></div>*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>

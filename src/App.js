@@ -110,10 +110,10 @@ class App extends Component {
           </ul>
             
           <Switch>
-            <Route path="/home" component={Carousel} />
+            <Route path="/home" render={() => <Carousel />} />
             <Route path="/View" render={() => <View/>} />
-              <Route path="/User" component={User}  />
-            <Route path="/Announcement" component={Announcement}  />
+              <Route path="/User" render={() => <User />}  />
+            <Route path="/Announcement" render={() => <Announcement />}  />
             <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} />} />
           </Switch>
 
