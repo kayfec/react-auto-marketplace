@@ -5,13 +5,15 @@
  
 .item {
     display: block;
-    margin-right: 25px;
+    margin-right: 5px;
     float: left;
     color: #74924C
 }
  
 .item img {
-    max-width: 400px;
+    max-width: 200px;
+    max-height: 100px;
+
 }
 
 OwlCarousel.navText {

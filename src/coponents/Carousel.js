@@ -13,6 +13,8 @@ export class Carousel extends React.Component {
               className="owl-theme"
               loop
               margin={5}
+              autoplay={'Autoplay'}
+              dotsSpeed={'15'}
               nav = {false}
               navText ={"<>"} 
               >

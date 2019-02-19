@@ -22,6 +22,7 @@ export class AddAnnouncement extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.createClick = this.createClick.bind(this);
     }
 
     handleChange(event, name) {
@@ -90,7 +91,7 @@ export class AddAnnouncement extends React.Component {
                     <div>
                         <input value={this.state.item.description} type="text"  className="description" onChange={(event) => this.handleChange(event, "description")} />
                     </div>
-                    <div>* Фото :</div>
+                    <div>* Загрузить фото :</div>
                     <div>
                         <input value={this.state.item.images} type="file"  className="images" onChange={(event) => this.handleChange(event, "images")} />
                     </div>      

@@ -8,3 +8,6 @@
     box-sizing: border-box; /* Ширина блока с полями */
     margin: auto;
    }
+input {
+    background: #8ba960; /* Цвет фона */
+}

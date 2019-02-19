@@ -7,9 +7,11 @@ export class User extends React.Component {
             <div className='login'>
                 <div>
                     Login:
+                    <input type='text'/>
                 </div>
                 <div>
                     Password:
+                    <input type='text'/>
                 </div>
             </div>
         )
