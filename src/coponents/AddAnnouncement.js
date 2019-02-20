@@ -17,7 +17,7 @@ export class AddAnnouncement extends React.Component {
                 color: '',
                 status: 'Продается', 
                 description: '',
-                images: '',
+                images: [],
             },
         };
 

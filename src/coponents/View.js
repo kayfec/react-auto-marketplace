@@ -31,7 +31,7 @@ export class View extends React.Component{
                 <div className="item"><img src={require('../images/1.jpg')} alt="photo" /></div>
                 <div className="mass" > Ваше обьявления</div>
                 <div className="content">
-                    <div>{views ? views : <div>пусто!</div>}</div>
+                    {views ? views : <div>пусто!</div>}
                 </div>
             </div>
         )

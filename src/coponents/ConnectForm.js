@@ -1,7 +1,8 @@
 import React from 'react';
-import './RegistrationForm.css';
+import './ConnectForm.css';
+import {RegisterForm} from "./RegisterForm";
 
-export class RegistrationForm extends React.Component {
+export class ConnectForm extends React.Component {
 
     constructor(props){
         super(props);
@@ -52,6 +53,7 @@ export class RegistrationForm extends React.Component {
                 <div>
                     <button onSubmit={this.Registration}>Registration</button>
                 </div>
+                <button>Зарегистрироватся{RegisterForm}</button>
 
             </form>
         )

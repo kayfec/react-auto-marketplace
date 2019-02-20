@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import {Carousel} from './coponents/Carousel';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import {RegistrationForm} from './coponents/RegistrationForm';
+import {ConnectForm} from './coponents/ConnectForm';
 import {Announcement} from './coponents/Announcement';
 import {AddAnnouncement} from './coponents/AddAnnouncement';
 import {View} from './coponents/View'
+import {RegisterForm} from "./coponents/RegisterForm";
 
 class App extends Component {
  
@@ -112,7 +113,10 @@ class App extends Component {
           <Switch>
             <Route path="/home" render={() => <Carousel />} />
             <Route path="/View" render={() => <View items={this.state.items}/>} />
-              <Route path="/RegistrationForm" render={() => <RegistrationForm />}  />
+            <Route path="/RegistrationForm" render={() => <ConnectForm
+                viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
+             render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}
+                />}  />
             <Route path="/Announcement" render={() => <Announcement />}  />
             <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} />} />
           </Switch>
