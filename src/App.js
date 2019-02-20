@@ -111,7 +111,7 @@ class App extends Component {
             
           <Switch>
             <Route path="/home" render={() => <Carousel />} />
-            <Route path="/View" render={() => <View/>} />
+            <Route path="/View" render={() => <View items={this.state.items}/>} />
               <Route path="/RegistrationForm" render={() => <RegistrationForm />}  />
             <Route path="/Announcement" render={() => <Announcement />}  />
             <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} />} />
