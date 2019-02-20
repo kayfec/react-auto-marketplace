@@ -8,21 +8,30 @@ export class RegistrationForm extends React.Component {
         this.state = {
             email: '',
             password:'',
-        }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleEmailChange = this.handleEmailChange.bind(this);
+        this.handlePassChange = this.handlePassChange.bind(this);
     }
 
-    handleSubmit() {
-        console.log('form is submited');
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log('form is submited', this.state.email);
     }
 
-    handleEmailChange(){
-        console.log('email was changet', this);
+    handleEmailChange(event){
+        console.log('email was changet', event.target.value);
+        this.setState({email: event.target.value});
+    }
+
+    handlePassChange(event){
+        console.log('pass was changet', event.target.value);
+        this.setState({password: event.target.value});
     }
 
     render() {
         return(
-            <form onSubmit={this.handleSubmit} className='login'>
+            <form className='login'>
                 <input
                     type="text"
                     placeholder="E-mail"
@@ -36,6 +45,14 @@ export class RegistrationForm extends React.Component {
                     value={this.state.password}
                     onChange={this.handlePassChange}
                 />
+                <div>
+                    <button onSubmit={this.handleSubmit}>Login</button>
+                </div>
+
+                <div>
+                    <button onSubmit={this.Registration}>Registration</button>
+                </div>
+
             </form>
         )
     }

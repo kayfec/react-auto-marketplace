@@ -60,6 +60,8 @@ export class AddAnnouncement extends React.Component {
                     <div> * Цена</div>
                     <div>
                         <input value={this.state.item.price} type="number" onChange={(event) => this.handleChange(event, "price")}/> 
+                    </div>
+                    <div>
                         <select value={this.state.item.money} name="money" onChange={(event) => this.handleChange(event, "money")}>
                             <option value="$ USD">$ USD</option>
                             <option value="₴ UAH">₴ UAH</option>
@@ -97,7 +99,7 @@ export class AddAnnouncement extends React.Component {
                     </div>      
 
                         <div>
-                        <button type="submit" onClick={this.createClick.bind(this)}>Сохранить</button>
+                        <button type="submit" onClick={this.createClick}>Сохранить</button>
                         </div>
                     </div>
                 </div>

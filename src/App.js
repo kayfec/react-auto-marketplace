@@ -16,6 +16,7 @@ class App extends Component {
       showAdd: false,
       onView: true,
       items: [],
+      users:[],
      curentViewItem : null,
       curentEditItem : null
     };
