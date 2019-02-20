@@ -5,6 +5,8 @@ import './Carousel.css'
 
 
 export class Carousel extends React.Component {
+
+
     render(){
 
         return (

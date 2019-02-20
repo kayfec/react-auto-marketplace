@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import {Carousel} from './coponents/Carousel';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import {User} from './coponents/User';
+import {RegistrationForm} from './coponents/RegistrationForm';
 import {Announcement} from './coponents/Announcement';
 import {AddAnnouncement} from './coponents/AddAnnouncement';
 import {View} from './coponents/View'
-
 
 class App extends Component {
  
@@ -106,13 +105,13 @@ class App extends Component {
             <li><Link to="/View">Все Обьявления</Link></li>
             <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
             <li><Link to="/Announcement">Все Авто</Link></li>
-            <li><Link to="/User">Кабинет</Link></li> 
+            <li><Link to="/RegistrationForm">Кабинет</Link></li>
           </ul>
             
           <Switch>
             <Route path="/home" render={() => <Carousel />} />
             <Route path="/View" render={() => <View/>} />
-              <Route path="/User" render={() => <User />}  />
+              <Route path="/RegistrationForm" render={() => <RegistrationForm />}  />
             <Route path="/Announcement" render={() => <Announcement />}  />
             <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} />} />
           </Switch>

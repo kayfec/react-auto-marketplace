@@ -41,7 +41,7 @@ export class AddAnnouncement extends React.Component {
     render() {
        
         return (
-            <div className="add">
+            <form className="add">
                 <div>
                     <div> * Марка</div>
                     <div>
@@ -102,7 +102,7 @@ export class AddAnnouncement extends React.Component {
                     </div>
                 </div>
                 
-            </div>
+            </form>
         );
     }
 }
