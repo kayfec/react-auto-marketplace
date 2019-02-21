@@ -27,6 +27,7 @@ class App extends Component {
     this.onChange = this.onChange.bind(this);
     this.onAdd = this.onAdd.bind(this);
     this.closeViewClick = this.closeViewClick.bind(this);
+    this.onRemove = this.onRemove.bind(this);
    
   }
 
@@ -53,6 +54,18 @@ class App extends Component {
       return prevState;
     });
   }
+
+
+  onRemove(index) {
+    this.setState(prevState => {
+      prevState.items.splice(index, 1);
+
+      return {
+        items: prevState.items
+      };
+    });
+  }
+
 
 
   onChange(index) {
@@ -86,7 +99,7 @@ class App extends Component {
             
           <Switch>
             <Route path="/home" render={() => <Carousel />} />
-            <Route path="/View" render={() => <View items={this.state.items}/>} onRemove={this.onRemove} />
+            <Route path="/View" render={() => <View items={this.state.items}/>} onRemove={this.onRemove} onChange={this.onChange} />
             <Route path="/RegistrationForm" render={() => <ConnectForm
                 viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
              render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}

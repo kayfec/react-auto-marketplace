@@ -21,7 +21,10 @@ export class View extends React.Component{
                     <div> * Цвет Авто: {this.props.items.color}</div>
                     <div> * Статус: {this.props.items.status}</div>
                     <div> * Описание: {this.props.items.description} </div>
-                    <div><button onClick={this.props.onRemove}>Удалить</button></div>
+                    <div>
+                        <button onClick={this.props.onChange}>Изменить</button>
+                        <button onClick={this.props.onRemove}>Удалить</button>
+                    </div>
                </div>));
         }
 
