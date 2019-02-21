@@ -103,7 +103,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <ul className="mainMenu">
-            <li><Link defaultChecked to="/home">Главнная</Link></li>
+            <li><Link defaultChecked to="/">Главнная</Link></li>
             <li><Link to="/View">Все Обьявления</Link></li>
             <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
             <li><Link to="/Announcement">Все Авто</Link></li>
@@ -111,7 +111,7 @@ class App extends Component {
           </ul>
             
           <Switch>
-            <Route path="/home" render={() => <Carousel />} />
+            <Route path="/" render={() => <Carousel />} />
             <Route path="/View" render={() => <View items={this.state.items}/>} />
             <Route path="/RegistrationForm" render={() => <ConnectForm
                 viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
