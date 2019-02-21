@@ -86,7 +86,7 @@ class App extends Component {
             
           <Switch>
             <Route path="/home" render={() => <Carousel />} />
-            <Route path="/View" render={() => <View items={this.state.items}/>} />
+            <Route path="/View" render={() => <View items={this.state.items}/>} onRemove={this.onRemove} />
             <Route path="/RegistrationForm" render={() => <ConnectForm
                 viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
              render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}
