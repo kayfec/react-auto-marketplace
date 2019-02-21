@@ -3,6 +3,7 @@ import './RegisterForm.css';
 
 
 export class RegisterForm extends React.Component {
+
     render() {
         return (
             <div>

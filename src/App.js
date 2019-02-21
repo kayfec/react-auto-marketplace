@@ -21,12 +21,11 @@ class App extends Component {
      curentViewItem : null,
       curentEditItem : null
     };
-    this.onRemove = this.onRemove.bind(this);
+
     this.addClick = this.addClick.bind(this);
     this.onView = this.onView.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onAdd = this.onAdd.bind(this);
-    this.onEdit = this.onEdit.bind(this);
     this.closeViewClick = this.closeViewClick.bind(this);
    
   }
@@ -46,13 +45,6 @@ class App extends Component {
     })
   }
 
-  closeEditClick() {
-    this.setState(prevState => {
-      delete prevState.curentEditItem;
-      return prevState;
-    })
-  }
-
   onAdd(item) {
     this.setState(prevState => {
       item.id = Date.now();
@@ -62,24 +54,6 @@ class App extends Component {
     });
   }
 
-  onEdit(item) {
-    this.setState(prevState => {
-      const itemIndex = prevState.items.findIndex(i => i.id === item.id);
-      prevState.items[itemIndex] = item;
-      delete prevState.curentEditItem;
-      return prevState;
-    });
-  }
-
-  onRemove(index) {
-    this.setState(prevState => {
-      prevState.items.splice(index, 1);
-
-      return {
-        items: prevState.items
-      };
-    });
-  }
 
   onChange(index) {
     this.setState(prevState => {
@@ -103,7 +77,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <ul className="mainMenu">
-            <li><Link defaultChecked to="/">Главнная</Link></li>
+            <li><Link defaultChecked to="/home">Главнная</Link></li>
             <li><Link to="/View">Все Обьявления</Link></li>
             <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
             <li><Link to="/Announcement">Все Авто</Link></li>
@@ -111,7 +85,7 @@ class App extends Component {
           </ul>
             
           <Switch>
-            <Route path="/" render={() => <Carousel />} />
+            <Route path="/home" render={() => <Carousel />} />
             <Route path="/View" render={() => <View items={this.state.items}/>} />
             <Route path="/RegistrationForm" render={() => <ConnectForm
                 viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}

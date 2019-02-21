@@ -25,6 +25,7 @@ export class AddAnnouncement extends React.Component {
         this.createClick = this.createClick.bind(this);
     }
 
+
     handleChange(event, name) {
         const value = event.target.value;
 
@@ -34,7 +35,8 @@ export class AddAnnouncement extends React.Component {
         });
     }
 
-    createClick() {
+    createClick(e) {
+        e.preventDefault();
         this.props.onSave(this.state.item);
     }
     
@@ -70,7 +72,7 @@ export class AddAnnouncement extends React.Component {
                     </div>
                     <div> * коробка</div>
                     <div>
-                        <select name="transmishion" value={this.state.item.transmishion} defaultValue={this.state.item.transmishion} onChange={(event) => this.handleChange(event, "transmishion")} >
+                        <select name="transmishion" value={this.state.item.transmishion} onChange={(event) => this.handleChange(event, "transmishion")} >
                             <option value="Автомат">Автомат</option>
                             <option value="Механника">Механника</option>
                             <option value="Полу-автомат">Полу-автомат</option>
@@ -99,7 +101,7 @@ export class AddAnnouncement extends React.Component {
                     </div>      
 
                         <div>
-                        <button type="submit" onClick={this.createClick}>Сохранить</button>
+                        <button  onClick={this.createClick}>Сохранить</button>
                         </div>
                     </div>
                 </div>
