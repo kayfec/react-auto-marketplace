@@ -87,16 +87,15 @@ class App extends Component {
       <Router>
         <div className="App">
           <ul className="mainMenu">
-            <li><Link to="/home">Главнная</Link></li>
+            <li><Link to="/">Главнная</Link></li>
             <li><Link to="/View">Все Обьявления</Link></li>
             <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
             <li><Link to="/Announcement">Поиск Авто</Link></li>
             <li><Link to="/RegistrationForm">Кабинет</Link></li>
           </ul>
-            
+
           <Switch>
-            <Redirect from='/' to="/home" />
-            <Route path="/home" render={() => <Home />} />
+            <Route exact path="/" render={() => <Home />} />
             <Route path="/home" render={() => <Home />} />
             <Route path="/View" render={() => <View items={this.state.items}/>} onRemove={this.onRemove} onChange={this.onChange} />
             <Route path="/RegistrationForm" render={() => <ConnectForm
