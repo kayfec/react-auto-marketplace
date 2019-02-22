@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Home} from './coponents/Home';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch,Redirect } from "react-router-dom";
 import {ConnectForm} from './coponents/ConnectForm';
 import {Announcement} from './coponents/Announcement';
 import {AddAnnouncement} from './coponents/AddAnnouncement';
@@ -65,8 +65,6 @@ class App extends Component {
     });
   }
 
-
-
   onChange(index) {
     this.setState(prevState => {
       prevState.curentEditItem = this.state.items[index];
@@ -89,7 +87,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <ul className="mainMenu">
-            <li><Link defaultChecked to="/home">Главнная</Link></li>
+            <li><Link to="/home">Главнная</Link></li>
             <li><Link to="/View">Все Обьявления</Link></li>
             <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
             <li><Link to="/Announcement">Поиск Авто</Link></li>
@@ -97,6 +95,8 @@ class App extends Component {
           </ul>
             
           <Switch>
+            <Redirect from='/' to="/home" />
+            <Route path="/home" render={() => <Home />} />
             <Route path="/home" render={() => <Home />} />
             <Route path="/View" render={() => <View items={this.state.items}/>} onRemove={this.onRemove} onChange={this.onChange} />
             <Route path="/RegistrationForm" render={() => <ConnectForm
