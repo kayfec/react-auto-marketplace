@@ -51,10 +51,8 @@ export class ConnectForm extends React.Component {
                 </div>
 
                 <div>
-                    <button onSubmit={this.Registration}>Registration</button>
+                    <button>Registration{RegisterForm}</button>
                 </div>
-                <button>Зарегистрироватся{RegisterForm}</button>
-
             </form>
         )
     }

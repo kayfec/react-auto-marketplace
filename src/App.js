@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Carousel} from './coponents/Carousel';
+import {Home} from './coponents/Home';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import {ConnectForm} from './coponents/ConnectForm';
@@ -9,7 +9,6 @@ import {View} from './coponents/View'
 import {RegisterForm} from "./coponents/RegisterForm";
 
 class App extends Component {
- 
   constructor(props) {
     super(props);
 
@@ -93,18 +92,18 @@ class App extends Component {
             <li><Link defaultChecked to="/home">Главнная</Link></li>
             <li><Link to="/View">Все Обьявления</Link></li>
             <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
-            <li><Link to="/Announcement">Все Авто</Link></li>
+            <li><Link to="/Announcement">Поиск Авто</Link></li>
             <li><Link to="/RegistrationForm">Кабинет</Link></li>
           </ul>
             
           <Switch>
-            <Route path="/home" render={() => <Carousel />} />
+            <Route path="/home" render={() => <Home />} />
             <Route path="/View" render={() => <View items={this.state.items}/>} onRemove={this.onRemove} onChange={this.onChange} />
             <Route path="/RegistrationForm" render={() => <ConnectForm
                 viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
              render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}
                 />}  />
-            <Route path="/Announcement" render={() => <Announcement />}  />
+            <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />
             <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} />} />
           </Switch>
 

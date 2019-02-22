@@ -11,16 +11,16 @@ export class View extends React.Component{
         if (this.props.items) {
             views = this.props.items.map(
                 (item, index) => (<div className='box'>
-                    <div className="item" > * Фото {this.props.items.images}</div>
-                    <div > * id: {this.props.items.id} </div>
-                    <div> * Марка: {this.props.items.brand} </div>
-                    <div> * модель: {this.props.items.model }</div>
-                    <div> * Обьем двигателя: {this.props.items.engineVolume}</div>
-                    <div> * Цена: <FormatItem value={this.props.items.price} /> {this.props.items.money}</div>
-                    <div> * коробка : {this.props.items.transmishion}</div>
-                    <div> * Цвет Авто: {this.props.items.color}</div>
-                    <div> * Статус: {this.props.items.status}</div>
-                    <div> * Описание: {this.props.items.description} </div>
+                    <div className="item" > * Фото {item.images}</div>
+                    <div > * id: {item.id} </div>
+                    <div> * Марка: {item.brand} </div>
+                    <div> * модель: {item.model }</div>
+                    <div> * Обьем двигателя: {item.engineVolume}</div>
+                    <div> * Цена: <FormatItem value={item.price} /> {item.money}</div>
+                    <div> * коробка : {item.transmishion}</div>
+                    <div> * Цвет Авто: {item.color}</div>
+                    <div> * Статус: {item.status}</div>
+                    <div> * Описание: {item.description} </div>
                     <div>
                         <button onClick={this.props.onChange}>Изменить</button>
                         <button onClick={this.props.onRemove}>Удалить</button>
@@ -30,7 +30,7 @@ export class View extends React.Component{
 
         return(
             <div className="content" >
-                {views ? views : <h1 className='box' >пусто!</h1>}
+                {views.length ? views : <h1 className='box' >Пока нету обьявлений!</h1>}
             </div>
         )
     }

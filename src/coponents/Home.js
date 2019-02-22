@@ -1,10 +1,10 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
-import './Carousel.css'
+import './Home.css'
 
 
-export class Carousel extends React.Component {
+export class Home extends React.Component {
 
 
     render(){
@@ -23,7 +23,10 @@ export class Carousel extends React.Component {
               <div class="item"><img src={require('../images/2.jpg')} /></div>
               <div class="item"><img src={require('../images/3.jpg')} /></div>
               <div class="item"><img src={require('../images/4.jpg')} /></div>
-              </OwlCarousel>
+            </OwlCarousel>
+
+            <div className="TOP"><img src={require('../images/4.jpg')}/></div>
+
           </div>
         )
     }
