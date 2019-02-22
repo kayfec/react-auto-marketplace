@@ -12,7 +12,7 @@ export class View extends React.Component{
             views = this.props.items.map(
                 (item, index) => (<div className='box'>
                     <div className="item" > * Фото {item.images}</div>
-                    <div > * id: {item.id} </div>
+                    <div> * id: {item.id} </div>
                     <div> * Марка: {item.brand} </div>
                     <div> * модель: {item.model }</div>
                     <div> * Обьем двигателя: {item.engineVolume}</div>
@@ -30,7 +30,7 @@ export class View extends React.Component{
 
         return(
             <div className="content" >
-                {views.length ? views : <h1 className='box' >Пока нету обьявлений!</h1>}
+                {views.length ? views  : <h1 className='box' >Пока нету обьявлений!</h1>}
             </div>
         )
     }
