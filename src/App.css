@@ -46,9 +46,10 @@ nav {
   .mainMenu a {
     padding: 1em;
     display: block;
-    color: #74924C;
-    border-right: 1px solid #BAD78B;
-    background: rgba(186, 215, 139, .3);
+    color: #5b5e7e;
+    border-right: 1px solid #979dd7;
+    background: rgba(164, 174, 221, 0.3);
   }
-  .mainMenu a:hover {background: #BAD78B}
+  .mainMenu a:hover {background: #979dd7
+  }
 

@@ -7,7 +7,7 @@
     display: block;
     margin-right: 5px;
     float: left;
-    color: #74924C
+    color: #5b5e7e
 }
  
 .item img {
@@ -23,5 +23,5 @@ OwlCarousel.navText {
 .TOP {
     display: block;
     margin: auto;
-    color: #74924C
+    color: #5b5e7e
 }

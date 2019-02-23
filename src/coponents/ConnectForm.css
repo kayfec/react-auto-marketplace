@@ -1,5 +1,5 @@
 .login { 
-    background: #74924C; /* Цвет фона */
+    background: #acb2ee; /* Цвет фона */
     width: 300px; /* Ширина блока */
     padding: 10px; /* Поля */
     margin-top: 10px; /* Отступ сверху */
@@ -9,5 +9,5 @@
     margin: auto;
    }
 input {
-    background: #8ba960; /* Цвет фона */
+    background: #979dd7; /* Цвет фона */
 }

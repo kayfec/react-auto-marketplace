@@ -19,10 +19,10 @@ export class Home extends React.Component {
                   nav = {false}
                   navText ={"<>"}
                   >
-                  <div class="item"><img src={require('../images/1.jpg')} alt="photo" /></div>
-                  <div class="item"><img src={require('../images/2.jpg')} /></div>
-                  <div class="item"><img src={require('../images/3.jpg')} /></div>
-                  <div class="item"><img src={require('../images/4.jpg')} /></div>
+                  <div className="item"><img src={require('../images/1.jpg')} alt="photo" /></div>
+                  <div className="item"><img src={require('../images/2.jpg')} /></div>
+                  <div className="item"><img src={require('../images/3.jpg')} /></div>
+                  <div className="item"><img src={require('../images/4.jpg')} /></div>
                 </OwlCarousel>
 
                 <div className="TOP"><img src={require('../images/4.jpg')}/></div>
