@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Home} from './coponents/Home';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch,Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch, } from "react-router-dom";
 import {ConnectForm} from './coponents/ConnectForm';
 import {Announcement} from './coponents/Announcement';
 import {AddAnnouncement} from './coponents/AddAnnouncement';
@@ -103,7 +103,7 @@ class App extends Component {
              render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}
                 />}  />
             <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />
-            <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} />} />
+            <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} item={this.state.curentEditItem} />} />
           </Switch>
 
         </div>
