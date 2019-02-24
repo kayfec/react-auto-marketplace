@@ -7,32 +7,31 @@ export class View extends React.Component{
     constructor() {
         super();
         this.state = {
-            editing:false
+            editingId: false
         }
     }
+
     onSubmit = (e) => {
         e.preventDefault();
         let brand = this.brand.value;
         let model = this.model.value;
-        this.props.items.map(item => {
-            console.log('item id',item.id)
-            console.log('value',brand)
-            this.props.onEdit(item.id,brand,model);
-        })
-        this.setState(({editing}) => {
-            return {
-                editing:!editing
-            }
-        })
 
-    }
+        const currentItem = this.props.items.find(item => item.id === this.state.editingId);
+        currentItem.brand = brand;
+        currentItem.model = model;
+        this.props.onEdit(currentItem);
+        this.setState({
+            editingId:false
+        });
+    };
+
     render(){
         let views = [];
 
         if (this.props.items) {
             views = this.props.items.map(
                 (item) => (
-                    this.state.editing
+                    this.state.editingId == item.id
                         ?
                         <form className='box' key={item.id} onSubmit={this.onSubmit}>
                             <div className="item" > * Фото {item.images}</div>
@@ -60,7 +59,7 @@ export class View extends React.Component{
                             <div> * Статус: {item.status}</div>
                             <div> * Описание: {item.description} </div>
                             <div>
-                                <button onClick={() => this.setState({editing:!this.state.editing})}>Изменить</button>
+                                <button onClick={() => this.setState({editingId: item.id})}>Изменить</button>
                                 <button onClick={this.props.onRemove}>Удалить</button>
                             </div>
                         </div>

@@ -80,21 +80,18 @@ class App extends Component {
       return prevState;
     });
   }
-  onEdit = (id,brand,model) => {
+
+  onEdit = (data) => {
     const newItem = this.state.items.map(item => {
-      if(item.id === id) {
-        item.brand = brand;
-        item.model = model;
+      if(item.id === data.id) {
+        return data;
       }
-      return item
-    })
-    this.setState(({editing}) => {
-      return {
-        items:newItem,
-        editing:!editing
-      }
-    })
-  }
+      return item;
+    });
+    this.setState({
+      items: newItem,
+    });
+  };
 
   
   render() {
