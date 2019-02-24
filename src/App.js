@@ -17,8 +17,9 @@ class App extends Component {
       onView: true,
       items: [],
       users:[],
-     curentViewItem : null,
-      curentEditItem : null
+      curentViewItem : null,
+      curentEditItem : null,
+      editing:false
     };
 
     this.addClick = this.addClick.bind(this);
@@ -27,7 +28,8 @@ class App extends Component {
     this.onAdd = this.onAdd.bind(this);
     this.closeViewClick = this.closeViewClick.bind(this);
     this.onRemove = this.onRemove.bind(this);
-   
+    this.onEdit = this.onEdit.bind(this);
+
   }
 
   addClick() {
@@ -78,36 +80,60 @@ class App extends Component {
       return prevState;
     });
   }
-  
+  onEdit = (id,brand,model) => {
+    const newItem = this.state.items.map(item => {
+      if(item.id === id) {
+        item.brand = brand;
+        item.model = model;
+      }
+      return item
+    })
+    this.setState(({editing}) => {
+      return {
+        items:newItem,
+        editing:!editing
+      }
+    })
+  }
 
   
   render() {
 
     return (
-      <Router>
-        <div className="App">
-          <ul className="mainMenu">
-            <li><Link to="/">Главнная</Link></li>
-            <li><Link to="/View">Все Обьявления</Link></li>
-            <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
-            <li><Link to="/Announcement">Поиск Авто</Link></li>
-            <li><Link to="/RegistrationForm">Кабинет</Link></li>
-          </ul>
+        <Router>
+          <div className="App">
+            <ul className="mainMenu">
+              <li><Link to="/">Главнная</Link></li>
+              <li><Link to="/View">Все Обьявления</Link></li>
+              <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
+              <li><Link to="/Announcement">Поиск Авто</Link></li>
+              <li><Link to="/RegistrationForm">Кабинет</Link></li>
+            </ul>
 
-          <Switch>
-            <Route exact path="/" render={() => <Home />} />
-            <Route path="/home" render={() => <Home />} />
-            <Route path="/View" render={() => <View items={this.state.items}/>} onRemove={this.onRemove} onChange={this.onChange} />
-            <Route path="/RegistrationForm" render={() => <ConnectForm
-                viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
-             render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}
-                />}  />
-            <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />
-            <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} item={this.state.curentEditItem} />} />
-          </Switch>
+            <Switch>
+              <Route exact path="/" render={() => <Home />} />
+              <Route path="/home" render={() => <Home />} />
+              <Route path="/View" render={() => {
+                return (
+                    <View
+                        onEdit={this.onEdit}
+                        items={this.state.items}
+                        onRemove={this.onRemove}
+                        onChange={this.onChange}
+                    />
+                )
+              }}
+              />
+              <Route path="/RegistrationForm" render={() => <ConnectForm
+                  viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
+                  render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}
+              />}  />
+              <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />
+              <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} item={this.state.curentEditItem} />} />
+            </Switch>
 
-        </div>
-      </Router>
+          </div>
+        </Router>
     );
   }
 }

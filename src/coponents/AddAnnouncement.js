@@ -27,7 +27,7 @@ export class AddAnnouncement extends React.Component {
 
 
     handleChange(event, name) {
-        const value = event.target.value;
+        let value = event.target.value;
 
         this.setState(prevState => {
             prevState.item[name] = value;
@@ -38,6 +38,18 @@ export class AddAnnouncement extends React.Component {
     createClick(e) {
         e.preventDefault();
         this.props.onSave(this.state.item);
+       this.setState({item:{
+           brand: '',
+           model: '',
+           engineVolume: '',
+           date: '',
+           price: '' ,
+           money: '$ USD',
+           transmishion: 'Автомат',
+           color: '',
+           status: 'Продается',
+           description: '',
+           images: [],}});
     }
     
     render() {
