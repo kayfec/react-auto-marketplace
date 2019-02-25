@@ -29,7 +29,7 @@ class App extends Component {
     this.closeViewClick = this.closeViewClick.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.onEdit = this.onEdit.bind(this);
-
+ 
   }
 
   addClick() {
@@ -47,10 +47,11 @@ class App extends Component {
     })
   }
 
-  onAdd(item) {
+  onAdd(item, user) {
     this.setState(prevState => {
       item.id = Date.now();
       prevState.items.push(item);
+      prevState.users.push(user);
       prevState.showAdd = false;
       return prevState;
     });
@@ -123,7 +124,10 @@ class App extends Component {
               />
               <Route path="/RegistrationForm" render={() => <ConnectForm
                   viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
-                  render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick} />}
+                  render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick}
+                  onSave={this.onAdd}
+
+                  />}
               />}  />
               <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />
               <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} item={this.state.curentEditItem} />} />

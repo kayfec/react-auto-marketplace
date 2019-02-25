@@ -46,7 +46,7 @@ export class ConnectForm extends React.Component {
                             <h2 className='Reg'>Регистрация учётной записи</h2>
                             <a className="close" onClick={this.onChange}>&times;</a>
                             <div className="content">
-                                <RegisterForm />
+                                <RegisterForm onClick={this.createClick}/>
                             </div>
                         </div>
                     </div>
