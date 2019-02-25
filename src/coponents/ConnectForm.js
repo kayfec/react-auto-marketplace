@@ -9,10 +9,12 @@ export class ConnectForm extends React.Component {
         this.state = {
             email: '',
             password:'',
+            showAdd: false,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEmailChange = this.handleEmailChange.bind(this);
         this.handlePassChange = this.handlePassChange.bind(this);
+        this.onChange = this.onChange.bind(this);
     }
 
     handleSubmit(event) {
@@ -29,6 +31,15 @@ export class ConnectForm extends React.Component {
         console.log('pass was changet', event.target.value);
         this.setState({password: event.target.value});
     }
+
+    onChange() {
+        this.setState(prevState => {
+            return {
+                showAdd: !prevState.showAdd
+            };
+        });
+    }
+
 
     render() {
         return(
@@ -47,12 +58,24 @@ export class ConnectForm extends React.Component {
                     onChange={this.handlePassChange}
                 />
                 <div>
-                    <button onSubmit={this.handleSubmit}>Login</button>
+                    <button>Login</button>
                 </div>
 
-                <div>
-                    <button>Registration{RegisterForm}</button>
+                <div className="App">
+                    <button type='button' onClick={this.onChange}>Register</button>
+                    {this.state.showAdd &&
+                    <div id="popup1" className="overlay">
+                        <div className="popup">
+                            <h2>Регистрация учётной записи</h2>
+                            <a className="close" onClick={this.onChange}>&times;</a>
+                            <div className="content">
+                                <RegisterForm />
+                            </div>
+                        </div>
+                    </div>
+                    }
                 </div>
+
             </form>
         )
     }
