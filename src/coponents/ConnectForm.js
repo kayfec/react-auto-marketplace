@@ -7,30 +7,11 @@ export class ConnectForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            email: '',
-            password:'',
             showAdd: false,
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleEmailChange = this.handleEmailChange.bind(this);
-        this.handlePassChange = this.handlePassChange.bind(this);
-        this.onChange = this.onChange.bind(this);
+            this.onChange = this.onChange.bind(this);
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-        console.log('form is submited', this.state.email);
-    }
-
-    handleEmailChange(event){
-        console.log('email was changet', event.target.value);
-        this.setState({email: event.target.value});
-    }
-
-    handlePassChange(event){
-        console.log('pass was changet', event.target.value);
-        this.setState({password: event.target.value});
-    }
 
     onChange() {
         this.setState(prevState => {
@@ -46,16 +27,12 @@ export class ConnectForm extends React.Component {
             <form className='login'>
                 <input
                     type="text"
-                    placeholder="E-mail"
-                    value={this.state.email}
-                    onChange={this.handleEmailChange}
+                    placeholder="Логин"
                 />
 
                 <input
                     type="password"
-                    placeholder="password"
-                    value={this.state.password}
-                    onChange={this.handlePassChange}
+                    placeholder="Пароль"
                 />
                 <div>
                     <button>Login</button>
@@ -66,7 +43,7 @@ export class ConnectForm extends React.Component {
                     {this.state.showAdd &&
                     <div id="popup1" className="overlay">
                         <div className="popup">
-                            <h2>Регистрация учётной записи</h2>
+                            <h2 className='Reg'>Регистрация учётной записи</h2>
                             <a className="close" onClick={this.onChange}>&times;</a>
                             <div className="content">
                                 <RegisterForm />

@@ -15,6 +15,7 @@ input {
 /*popup */
 .App {
     text-align: center;
+    color: black;
 }
 .overlay {
     position: fixed;
@@ -29,7 +30,7 @@ input {
     margin: 70px auto;
     padding: 20px;
     /* background: #fff; */
-    background-color:  rgba(105, 101, 95, 0.568);
+    background-color: #acb2ee;
     border-radius: 5px;
     width: 500px;
     position: relative;
