@@ -1,7 +1,7 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
-import './Home.css'
+import './css/Home.css'
 
 
 export class Home extends React.Component {

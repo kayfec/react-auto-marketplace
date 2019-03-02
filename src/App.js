@@ -29,7 +29,7 @@ class App extends Component {
     this.closeViewClick = this.closeViewClick.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.onEdit = this.onEdit.bind(this);
- 
+    this.onChahgeUser = this.onChahgeUser.bind(this);
   }
 
   addClick() {
@@ -44,8 +44,8 @@ class App extends Component {
     this.setState(prevState => {
       delete prevState.curentViewItem;
       return prevState;
-    })
-  }
+    });
+  };
 
   onAdd(item, user) {
     this.setState(prevState => {
@@ -71,6 +71,13 @@ class App extends Component {
   onChange(index) {
     this.setState(prevState => {
       prevState.curentEditItem = this.state.items[index];
+      return prevState;
+    });
+  }
+
+  onChahgeUser(index) {
+    this.setState(prevState => {
+      prevState.curentEditItem = this.state.users[index];
       return prevState;
     });
   }
@@ -105,7 +112,7 @@ class App extends Component {
               <li><Link to="/View">Все Обьявления</Link></li>
               <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
               <li><Link to="/Announcement">Поиск Авто</Link></li>
-              <li><Link to="/RegistrationForm">Кабинет</Link></li>
+              <li><Link to="/ConnectForm">Кабинет</Link></li>
             </ul>
 
             <Switch>
@@ -122,11 +129,11 @@ class App extends Component {
                 )
               }}
               />
-              <Route path="/RegistrationForm" render={() => <ConnectForm
+              <Route path="/ConnectForm" render={() => <ConnectForm
                   viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
-                  render={()=><RegisterForm RegisterForm={this.props.curentViewItem} closeClick={this.closeViewClick}
+                  render={()=><RegisterForm RegisterForm={this.props.curentViewItem} onChangeUser={this.props.handleChange} closeClick={this.closeViewClick}
                   onSave={this.onAdd}
-
+                  user = {this.state.curentEditItem}
                   />}
               />}  />
               <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />

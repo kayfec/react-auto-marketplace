@@ -1,0 +1,12 @@
+.add {
+    background: #acb2ee;
+    width: 300px;
+    padding: 10px;
+    border: 2px solid #000;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: auto;
+}
+input {
+    background: #979dd7;
+}

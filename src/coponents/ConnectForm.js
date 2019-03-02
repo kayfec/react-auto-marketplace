@@ -1,5 +1,5 @@
 import React from 'react';
-import './ConnectForm.css';
+import './css/ConnectForm.css';
 import {RegisterForm} from "./RegisterForm";
 
 export class ConnectForm extends React.Component {
@@ -12,7 +12,6 @@ export class ConnectForm extends React.Component {
             this.onChange = this.onChange.bind(this);
     }
 
-
     onChange() {
         this.setState(prevState => {
             return {
@@ -20,7 +19,6 @@ export class ConnectForm extends React.Component {
             };
         });
     }
-
 
     render() {
         return(
@@ -46,7 +44,7 @@ export class ConnectForm extends React.Component {
                             <h2 className='Reg'>Регистрация учётной записи</h2>
                             <a className="close" onClick={this.onChange}>&times;</a>
                             <div className="content">
-                                <RegisterForm onClick={this.createClick}/>
+                                <RegisterForm onClick={this.props.createClick}/>
                             </div>
                         </div>
                     </div>

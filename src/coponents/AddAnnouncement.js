@@ -1,5 +1,5 @@
 import React from 'react';
-import './AddAnnouncement.css';
+import './css/AddAnnouncement.css';
 
 export class AddAnnouncement extends React.Component {
     constructor(props) {

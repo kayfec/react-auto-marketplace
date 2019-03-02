@@ -1,5 +1,5 @@
 import React from 'react';
-import './RegisterForm.css';
+import './css/RegisterForm.css';
 
 
 export class RegisterForm extends React.Component {
@@ -87,7 +87,7 @@ export class RegisterForm extends React.Component {
             </div>
             <div>
             <input
-                type="text"
+                type="number"
                 placeholder="Возраст"
                 value={this.state.user.age}
                 onChange={(event) => this.handleChange(event, "age")}

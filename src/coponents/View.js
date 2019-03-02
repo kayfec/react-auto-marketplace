@@ -1,5 +1,5 @@
 import React from 'react';
-import './View.css';
+import './css/View.css';
 import {FormatItem} from "./FormatItem";
 
 
