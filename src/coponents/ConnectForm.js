@@ -1,6 +1,7 @@
 import React from 'react';
 import './css/ConnectForm.css';
 import {RegisterForm} from "./RegisterForm";
+import {store} from '../reducers/actions';
 
 export class ConnectForm extends React.Component {
 
@@ -44,7 +45,7 @@ export class ConnectForm extends React.Component {
                             <h2 className='Reg'>Регистрация учётной записи</h2>
                             <a className="close" onClick={this.onChange}>&times;</a>
                             <div className="content">
-                                <RegisterForm onClick={this.props.createClick}/>
+                                <RegisterForm />
                             </div>
                         </div>
                     </div>

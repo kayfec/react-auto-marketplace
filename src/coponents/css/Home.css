@@ -13,11 +13,13 @@
 .item img {
     max-width: 200px;
     max-height: 100px;
+    border: 1px solid #c9ddf7;
+    border-radius: 5px;
 
 }
 
 OwlCarousel.navText {
-    size: 10pix
+    size: 15cm;
 }
 
 .TOP {

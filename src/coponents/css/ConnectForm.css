@@ -1,14 +1,15 @@
 .login { 
-    background: #acb2ee; /* Цвет фона */
-    width: 300px; /* Ширина блока */
-    padding: 10px; /* Поля */
-    border: 2px solid #000; /* Параметры рамки */
-    -moz-box-sizing: border-box; /* Для Firefox */  
-    box-sizing: border-box; /* Ширина блока с полями */
+    background: #acb2ee;
+    width: 300px;
+    padding: 10px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     margin: auto;
+    border: 1px solid #c9ddf7;
+    border-radius: 5px;
    }
 input {
-    background: #979dd7; /* Цвет фона */
+    background: #979dd7;
 }
 
 /*popup */

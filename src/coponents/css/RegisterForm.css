@@ -5,12 +5,13 @@
     left: 0;
     right: 0;
     background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #c9ddf7;
+    border-radius: 5px;
 }
 
 .popup2 {
     margin: 70px auto;
     padding: 20px;
-    /* background: #fff; */
     background-color:  rgba(105, 104, 95, 0.932);
     border-radius: 5px;
     width: 500px;

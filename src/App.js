@@ -107,12 +107,31 @@ class App extends Component {
     return (
         <Router>
           <div className="App">
-            <ul className="mainMenu">
-              <li><Link to="/">Главнная</Link></li>
-              <li><Link to="/View">Все Обьявления</Link></li>
-              <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
-              <li><Link to="/Announcement">Поиск Авто</Link></li>
-              <li><Link to="/ConnectForm">Кабинет</Link></li>
+            <ul className="main-menu">
+              <li className="home"><Link to="/">Главнная</Link></li>
+              <li><Link to="/View">Все Обьявления</Link>
+                <ul className="submenu">
+                  <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
+                  <li><Link to="/Announcement">Поиск Авто</Link></li>
+                  <li><a href="">поиск авто по пар-м</a></li>
+                </ul>
+              </li>
+
+              <li><a href="">Партнёры</a>
+                <ul className="submenu">
+                  <li><a href="https://allcars.com/">allCars</a></li>
+                  <li><a href="https://auto.ria.com/">Autor1a</a></li>
+                  <li><a href="">Сервис Авто</a></li>
+                </ul>
+              </li>
+
+              <li> <a href="" className="submenu-link">Кабинет</a>
+                <ul className="submenu">
+                <li><a href="">Создать анкету</a></li>
+                <li><a href="">просотреть анкеты</a></li>
+                <li><Link to="/ConnectForm">Кабинет</Link></li>
+                </ul>
+              </li>
             </ul>
 
             <Switch>
@@ -131,10 +150,13 @@ class App extends Component {
               />
               <Route path="/ConnectForm" render={() => <ConnectForm
                   viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
-                  render={()=><RegisterForm RegisterForm={this.props.curentViewItem} onChangeUser={this.props.handleChange} closeClick={this.closeViewClick}
-                  onSave={this.onAdd}
-                  user = {this.state.curentEditItem}
-                  />}
+                  render={()=>
+                      <RegisterForm RegisterForm={this.props.curentViewItem}
+                                    onChangeUser={this.props.handleChange}
+                                    closeClick={this.closeViewClick}
+                                    onSave={this.onAdd}
+                                    user = {this.state.curentEditItem}
+                      />}
               />}  />
               <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />
               <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} item={this.state.curentEditItem} />} />

@@ -48,7 +48,7 @@ export class View extends React.Component{
         if (this.props.items) {
             views = this.props.items.map(
                 (item) => (
-                    this.state.editingId == item.id
+                    this.state.editingId === item.id
                         ?
                         <form className='box' key={item.id} onSubmit={this.onSubmit}>
                             <div className="item" > * Фото <input type="file" ref={el=> this.images = el} defaultValue={item.images}/></div>

@@ -1,14 +1,14 @@
 .box { 
-    background: #acb2ee; /* Цвет фона */
-    width: 300px; /* Ширина блока */
-    padding: 10px; /* Поля */
-    margin-top: 10px; /* Отступ сверху */
-    border: 2px solid #000; /* Параметры рамки */
-    -moz-box-sizing: border-box; /* Для Firefox */  
-    box-sizing: border-box; /* Ширина блока с полями */
-    overflow: hidden;
+    background: #acb2ee;
+    width: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid #c9ddf7;
+    border-radius: 5px;
    }
 
 .mass {

@@ -37,7 +37,7 @@ export class RegisterForm extends React.Component {
                 phone: '',
             },
         });
-    };
+    }
 
     handleChange(event, name){
         let value = event.target.value
