@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {Home} from './coponents/Home';
-import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch, } from "react-router-dom";
+
+import './App.css';
+
+import {Home} from './coponents/Home';
 import {ConnectForm} from './coponents/ConnectForm';
 import {Announcement} from './coponents/Announcement';
 import {AddAnnouncement} from './coponents/AddAnnouncement';
@@ -108,27 +110,28 @@ class App extends Component {
         <Router>
           <div className="App">
             <ul className="main-menu">
-              <li className="home"><Link to="/">Главнная</Link></li>
+              <img className='ico' src={require("./images/favicon.ico")}/>
+              <li className="home"><Link to="/"> Главнная</Link></li> {/* <img src={require("./images/favicon.ico")}/>*/}
               <li><Link to="/View">Все Обьявления</Link>
                 <ul className="submenu">
                   <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
-                  <li><Link to="/Announcement">Поиск Авто</Link></li>
-                  <li><a href="">поиск авто по пар-м</a></li>
+                  <li><Link to="/View">Все Авто</Link></li>
+                  <li><Link to="/Announcement">поиск авто по пар-м</Link></li>
                 </ul>
               </li>
 
               <li><a href="">Партнёры</a>
                 <ul className="submenu">
                   <li><a href="https://allcars.com/">allCars</a></li>
-                  <li><a href="https://auto.ria.com/">Autor1a</a></li>
-                  <li><a href="">Сервис Авто</a></li>
+                  <li><a href="https://auto.ria.com/">Auto Ria</a></li>
+                  <li><a href="http://www.bosch-car-service.com.ua">Сервис Авто Bosch</a></li>
                 </ul>
               </li>
 
               <li> <a href="" className="submenu-link">Кабинет</a>
                 <ul className="submenu">
-                <li><a href="">Создать анкету</a></li>
-                <li><a href="">просотреть анкеты</a></li>
+                <li><Link to="/RegisterAccount">Создать анкету</Link></li>
+                <li><a href="">просотреть мои обьявления</a></li>
                 <li><Link to="/ConnectForm">Кабинет</Link></li>
                 </ul>
               </li>
@@ -137,6 +140,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" render={() => <Home />} />
               <Route path="/home" render={() => <Home />} />
+              <Router path="/RegisterAccount" render={() => <RegisterForm onClick={this.onChange} />} />
               <Route path="/View" render={() => {
                 return (
                     <View
