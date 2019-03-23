@@ -23,6 +23,7 @@ OwlCarousel.navText {
 }
 
 .TOP {
+    height: 25px ;
     display: block;
     margin: auto;
     color: #5b5e7e
