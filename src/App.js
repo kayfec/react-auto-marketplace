@@ -111,16 +111,16 @@ class App extends Component {
           <div className="App">
             <ul className="main-menu">
               <img className='ico' src={require("./images/favicon.ico")}/>
-              <li className="home"><Link to="/"> Главнная</Link></li> {/* <img src={require("./images/favicon.ico")}/>*/}
-              <li><Link to="/View">Все Обьявления</Link>
+              <li className="home"><Link to="/"> Главнная</Link></li>
+              <li><a href="javascript:void 0" className="submenu-link">Все Обьявления</a>
                 <ul className="submenu">
-                  <li><Link to="/AddAnnouncement">Создать Обьявление</Link></li>
-                  <li><Link to="/View">Все Авто</Link></li>
-                  <li><Link to="/Announcement">поиск авто по пар-м</Link></li>
+                  <li><Link to="/addAnnouncement">Создать Обьявление</Link></li>
+                  <li><Link to="/view">Все Авто</Link></li>
+                  <li><Link to="/announcement">поиск авто по пар-м</Link></li>
                 </ul>
               </li>
 
-              <li><a href="">Партнёры</a>
+              <li> <a href="javascript:void 0" className="submenu-link">Партнёры</a>
                 <ul className="submenu">
                   <li><a href="https://allcars.com/">allCars</a></li>
                   <li><a href="https://auto.ria.com/">Auto Ria</a></li>
@@ -128,20 +128,19 @@ class App extends Component {
                 </ul>
               </li>
 
-              <li> <a href="" className="submenu-link">Кабинет</a>
+              <li> <a href="javascript:void 0" className="submenu-link">Кабинет</a>
                 <ul className="submenu">
-                <li><Link to="/RegisterAccount">Создать анкету</Link></li>
-                <li><a href="">просотреть мои обьявления</a></li>
-                <li><Link to="/ConnectForm">Кабинет</Link></li>
+                <li><Link to="/registerAccount">Создать анкету</Link></li>
+                <li><a href="javascript:void 0">просотреть мои обьявления</a></li>
+                <li><Link to="/connectForm">Кабинет</Link></li>
                 </ul>
               </li>
             </ul>
 
             <Switch>
               <Route exact path="/" render={() => <Home />} />
-              <Route path="/home" render={() => <Home />} />
-              <Router path="/RegisterAccount" render={() => <RegisterForm onClick={this.onChange} />} />
-              <Route path="/View" render={() => {
+              <Router path="/registerAccount" render={() => <RegisterForm onClick={this.onChange} />} />
+              <Route path="/view" render={() => {
                 return (
                     <View
                         onEdit={this.onEdit}
@@ -152,7 +151,7 @@ class App extends Component {
                 )
               }}
               />
-              <Route path="/ConnectForm" render={() => <ConnectForm
+              <Route path="/connectForm" render={() => <ConnectForm
                   viewInfo={this.state.curentViewItem} closeClick={this.closeViewClick}
                   render={()=>
                       <RegisterForm RegisterForm={this.props.curentViewItem}
@@ -162,8 +161,8 @@ class App extends Component {
                                     user = {this.state.curentEditItem}
                       />}
               />}  />
-              <Route path="/Announcement" render={() => <Announcement onView={this.onView} />}  />
-              <Route path="/AddAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} item={this.state.curentEditItem} />} />
+              <Route path="/announcement" render={() => <Announcement onView={this.onView} />}  />
+              <Route path="/addAnnouncement" render={() => <AddAnnouncement onSave={this.onAdd} onChange={this.props.handleChange} item={this.state.curentEditItem} />} />
             </Switch>
 
           </div>

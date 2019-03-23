@@ -25,7 +25,7 @@ export class Home extends React.Component {
                   <div className="item"><img src={require('../images/4.jpg')} /></div>
                 </OwlCarousel>
 
-                <div className="TOP"><img src={require('../images/4.jpg')}/></div>
+                <div className="top"><img src={require('../images/4.jpg')}/></div>
 
             </div>
         )
