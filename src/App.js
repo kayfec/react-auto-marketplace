@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch, } from "react-router-dom";
 
-import './App.css';
+import './components/css/App.css';
 
-import {Home} from './coponents/Home';
-import {ConnectForm} from './coponents/ConnectForm';
-import {Announcement} from './coponents/Announcement';
-import {AddAnnouncement} from './coponents/AddAnnouncement';
-import {View} from './coponents/View'
-import {RegisterForm} from "./coponents/RegisterForm";
+import {Home} from './components/Home';
+import {ConnectForm} from './components/ConnectForm';
+import {Announcement} from './components/Announcement';
+import {AddAnnouncement} from './components/AddAnnouncement';
+import {View} from './components/View'
+import {RegisterForm} from "./components/RegisterForm";
 
 class App extends Component {
   constructor(props) {
@@ -20,41 +20,41 @@ class App extends Component {
       items: [],
       users:[],
       curentViewItem : null,
-      curentEditItem : null,
+      curentEditItem : {},
       editing:false
     };
 
-    this.addClick = this.addClick.bind(this);
+    // this.addClick = this.addClick.bind(this);
     this.onView = this.onView.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onAdd = this.onAdd.bind(this);
-    this.closeViewClick = this.closeViewClick.bind(this);
+    // this.closeViewClick = this.closeViewClick.bind(this);
     this.onRemove = this.onRemove.bind(this);
     this.onEdit = this.onEdit.bind(this);
     this.onChahgeUser = this.onChahgeUser.bind(this);
   }
 
-  addClick() {
-    this.setState(prevState => {
-      return {
-        showAdd: !prevState.showAdd
-      };
-    });
-  }
+  // addClick() {
+  //   this.setState(prevState => {
+  //     return {
+  //       showAdd: !prevState.showAdd
+  //     };
+  //   });
+  // }
 
-  closeViewClick() {
-    this.setState(prevState => {
-      delete prevState.curentViewItem;
-      return prevState;
-    });
-  };
+  // closeViewClick() {
+  //   this.setState(prevState => {
+  //     delete prevState.curentViewItem;
+  //     return prevState;
+  //   });
+  // };
 
   onAdd(item, user) {
     this.setState(prevState => {
       item.id = Date.now();
       prevState.items.push(item);
       prevState.users.push(user);
-      prevState.showAdd = false;
+      // prevState.showAdd = false;
       return prevState;
     });
   }
@@ -75,6 +75,7 @@ class App extends Component {
       prevState.curentEditItem = this.state.items[index];
       return prevState;
     });
+    // this.setState({curentEditItem: this.state.items[index]})
   }
 
   onChahgeUser(index) {
